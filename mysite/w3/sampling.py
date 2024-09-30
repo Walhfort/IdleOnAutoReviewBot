@@ -468,7 +468,6 @@ def setSamplingProgressionTier() -> AdviceSection:
         pre_string="Improve material samples",
         advices=sampling_AdviceDict['MaterialSamples']
     )
-    sampling_AdviceGroupDict["MaterialSamples"].remove_empty_subgroups()
     sampling_AdviceGroupDict["PrinterSampleRate"] = getPrinterSampleRateAdviceGroup()
     sampling_AdviceGroupDict["PrinterOutput"] = getPrinterOutputAdviceGroup()
     complete_toons = 0  # Either above 90 and the prayer not worn, or below 90 and already wearing the prayer. Those are the 2 "no action needed" states

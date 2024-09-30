@@ -385,7 +385,6 @@ def getAlertsAdviceGroup() -> AdviceGroup:
         pre_string="Alerts",
         advices=session_data.account.alerts_AdviceDict
     )
-    alerts_AG.remove_empty_subgroups()
     return alerts_AG
 
 

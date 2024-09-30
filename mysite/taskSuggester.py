@@ -140,11 +140,9 @@ def main(inputData, runType="web"):
     ]
     if session_data.hide_completed:
         for world in reviews:
-            world.hide_completed_sections()
             for section in world.sections:
                 for group in section.groups:
-                    group.remove_completed_advices()
-                    group.remove_empty_subgroups()
+                    group.hide_completed_advices()
 
     headerData = HeaderData(inputData)
     logger.info(f"{headerData.last_update = }")

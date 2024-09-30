@@ -508,8 +508,6 @@ def getActiveGoalsAdviceGroup() -> AdviceGroup:
             "Daily": getDailyAdviceList(), "Weekly": getWeeklyAdviceList(), "Spend Consumables": getConsumablesAdviceList()
         }
     )
-    ag.remove_empty_subgroups()
-
     return ag
 
 def setActiveProgressionTier() -> AdviceSection:

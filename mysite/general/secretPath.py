@@ -146,7 +146,6 @@ def getRightHandsAdviceGroups():
         ),
         advices=stayahead_advices
     )
-    stayahead_ag.remove_empty_subgroups()
     return catchup_ag, stayahead_ag
 
 def setSecretClassProgressionTier():

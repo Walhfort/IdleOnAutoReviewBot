@@ -121,7 +121,6 @@ def setEquinoxProgressionTier() -> AdviceSection:
         advices=equinox_AdviceDict["Dreams"],
         post_string=f"{'New Bonuses unlock in a set order.They are not tied to certain Dreams.' if tier_TotalDreamsCompleted < max_tier else ''}"
     )
-    equinox_AdviceGroupDict["Complete Dreams"].remove_empty_subgroups()
 
     equinox_AdviceGroupDict["BonusUpgrades"] = AdviceGroup(
         tier="",

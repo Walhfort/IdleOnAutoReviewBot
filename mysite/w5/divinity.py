@@ -241,8 +241,6 @@ def getArctisAdviceGroup(lowestDivinitySkillLevel: int, highestDivinitySkillLeve
                    f" (+# Talent LV for all talents above Lv 1)",
         advices=arctis_AdviceDict
     )
-    arctis_AdviceGroup.remove_empty_subgroups()
-
     return arctis_AdviceGroup
 
 def setDivinityProgressionTier():

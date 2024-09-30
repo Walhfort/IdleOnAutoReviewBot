@@ -598,19 +598,15 @@ class AdviceGroup(AdviceBase):
             for field in self.__compare_by
         )
 
-    def remove_completed_advices(self):
+    def hide_completed_advices(self):
         if isinstance(self.advices, list):
-            self.advices = [value for value in self.advices if value.goal != "✔"]
+            for advice in self.advices:
+                advice.complete = advice.goal == "✔"
         if isinstance(self.advices, dict):
-            for key, value in self.advices.items():
-                if isinstance(value, list):
-                    self.advices[key] = [v for v in value if v.goal != "✔"]
-            self.advices = {key: value for key, value in self.advices.items() if value}
-
-    def remove_empty_subgroups(self):
-        if isinstance(self.advices, list):
-            self.advices = [value for value in self.advices if value]
-        if isinstance(self.advices, dict):
+            for key, advices in self.advices.items():
+                if isinstance(advices, list):
+                    for advice in advices:
+                       advice.complete = advice.goal == "✔"
             self.advices = {key: value for key, value in self.advices.items() if value}
 
     def sort_advices(self, reverseBool):
@@ -741,9 +737,6 @@ class AdviceWorld(AdviceBase):
     @property
     def id(self):
         return kebab(self.name)
-
-    def hide_completed_sections(self):
-        self.sections = [section for section in self.sections if not section.complete]
 
 
 greenStackAmount = 10**7

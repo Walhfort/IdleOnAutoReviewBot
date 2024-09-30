@@ -135,7 +135,6 @@ def getColliderSettingsAdviceGroup() -> AdviceGroup:
         advices=settings_advice,
         post_string=f""
     )
-    settings_ag.remove_empty_subgroups()
     return settings_ag
 
 def getCostReductionAdviceGroup() -> AdviceGroup:

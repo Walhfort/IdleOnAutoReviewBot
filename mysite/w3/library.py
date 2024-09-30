@@ -420,10 +420,6 @@ def getCharacterBooksAdviceGroups(anyBookAdvice: bool):
         if talentNumbersAdded:
             anyBookAdvice = True
 
-    #Remove any empty subgroups
-    for ag in character_AdviceGroupDict.values():
-        ag.remove_empty_subgroups()
-
     return character_AdviceGroupDict, anyBookAdvice, min(char_tiers.values(), default=0)
 
 def setLibraryProgressionTier() -> AdviceSection:
